@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -12,95 +11,222 @@
       padding: 20px;
       line-height: 1.5;
     }
+
     header {
-      background: linear-gradient(90deg, #0b63d6, #0696db);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px 10px;
+      border-radius: 0 0 20px 20px;
+      background: linear-gradient(135deg, #a31f34, #d1323e);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       color: white;
-      padding: 40px 16px;
-      text-align: center;
-      border-radius: 0 0 12px 12px;
     }
+
+    header img {
+      width: 240px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
     }
+
     header .meta {
       font-size: 1rem;
-      margin-top: 4px;
+      margin-top: 6px;
+      line-height: 1.4;
+      text-align: center;
     }
+
     .container {
       max-width: 900px;
       margin: 30px auto;
       padding: 0 16px;
     }
+
     .card {
-      background: #fff;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
       padding: 22px;
       margin-bottom: 18px;
     }
+
+    /* Degradê mais suave para as caixas */
+    .card:nth-of-type(1) { background: #fff5f7; }  /* Informações */
+    .card:nth-of-type(2) { background: #ffe8ec; }  /* Descrição */
+    .card.integrantes { background: #ffd8e0; }     /* Time feminino */
+    .card.curiosity { background: #ffc8d2; }       /* Curiosidade */
+    .card.recruit { background: #ffb8c4; }         /* Recrutamento */
+    .card.docs { background: #ffa6b6; }            /* Documentos */
+
     h2 {
-      color: #0b63d6;
+      color: #a31f34;
       margin-top: 0;
     }
-    ul {
+
+    h3 {
+      color: #d1323e;
+      margin-bottom: 8px;
+    }
+
+    ul, ol {
       margin: 8px 0 0 1.2rem;
     }
+
     footer {
       text-align: center;
       color: #666;
       font-size: 0.9rem;
       margin: 28px 0 40px 0;
     }
+
+    a { color: #d1323e; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Time feminino */
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-around;
+      margin-top: 12px;
+    }
+
+    .team-member {
+      flex: 1 1 150px;
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .team-member:nth-child(1) { background: #ffe8ec; }
+    .team-member:nth-child(2) { background: #ffd8e0; }
+    .team-member:nth-child(3) { background: #ffc8d2; }
+    .team-member:nth-child(4) { background: #ffb8c4; }
+    .team-member:nth-child(5) { background: #ffa6b6; }
+
+    /* Curiosidade com foto */
+    .curiosity img {
+      float: right;
+      max-width: 150px;
+      border-radius: 12px;
+      margin-left: 16px;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>capCode &lt;Girls/&gt;</h1>
-    <div class="meta">Equipe feminina — incentivo à participação de mulheres em cursos de Exatas</div>
-  </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>Informações da Equipe</h2>
-      <p><strong>Nome da Equipe:</strong> capCode &lt;Girls/&gt;</p>
-      <p><strong>Professor Coordenador:</strong> Samuel Moreira Abreu Araújo</p>
-      <p><strong>Campus da UFSJ:</strong> Campus Alto Paraopeba — CAP</p>
-      <p><strong>Unidade de lotação do Professor Coordenador:</strong> Departamento de Tecnologia em Engenharia Civil, Computação, Automação, Telemática e Humanidades — DTECH</p>
-      <p><strong>Data da aprovação:</strong> 22/08/2025</p>
-    </section>
+<header>
+    <a href="https://www.ufsj.edu.br/" target="_blank">
+        <img src="logo.jpg" alt="Logo UFSJ">
+    </a>
+    <div>
+        <h1>capCode &lt;Girls/&gt;</h1>
+        <div class="meta">Equipe feminina</div>
+    </div>
+</header>
 
-    <section class="card">
-      <h2>Nome do Projeto</h2>
-      <p>Heurísticas para o Problema de Alocação de Recursos e Roteamento em Ambientes de Edge e Cloud Computing para Cidades Inteligentes</p>
-    </section>
+<main class="container">
 
-    <section class="card">
-      <h2>Descrição da Equipe</h2>
-      <p>A equipe é composta exclusivamente por mulheres, tendo como propósito estimular a participação feminina em cursos de Exatas e áreas tecnológicas. Além disso, busca desenvolver nas alunas competências essenciais para sua formação acadêmica e profissional.</p>
+<!-- Informações da Equipe -->
+<section class="card">
+  <h2>Informações da Equipe</h2>
+  <p><strong>Nome da Equipe:</strong> capCode &lt;Girls/&gt;</p>
+  <p><strong>Professor Coordenador:</strong> 
+    <a href="http://lattes.cnpq.br/9608603270010718" target="_blank">Samuel Moreira Abreu Araújo</a>
+  </p>
+  <p><strong>Professor Orientador:</strong> Alex Vidigal Bastos</p>
+  <p><strong>Capitã da Equipe:</strong> Luísa Aparecida Ferreira de Lima — Engenharia Química / DEQUI</p>
+  <p><strong>Campus da UFSJ:</strong> Campus Alto Paraopeba — CAP</p>
+  <p><strong>Unidade de lotação:</strong> 
+    <a href="https://ufsj.edu.br/dtech/" target="_blank">DTECH</a>
+  </p>
+</section>
 
-      <h3>Hard Skills</h3>
-      <ul>
-        <li>Algoritmos e estruturas de dados</li>
-        <li>Modelagem e resolução de problemas computacionais</li>
-        <li>Programação competitiva e otimização</li>
-        <li>Conhecimentos básicos de redes e computação em nuvem/edge</li>
-      </ul>
+<!-- Descrição da Equipe -->
+<section class="card">
+  <h2>Descrição da Equipe</h2>
+  <p>A equipe é composta exclusivamente por mulheres, tendo como propósito estimular a participação feminina em cursos de Exatas e áreas tecnológicas. Além disso, busca desenvolver nas alunas competências essenciais para sua formação acadêmica e profissional.</p>
 
-      <h3>Soft Skills</h3>
-      <ul>
-        <li>Trabalho em equipe e colaboração</li>
-        <li>Trabalho sob pressão e gestão do tempo</li>
-        <li>Comunicação técnica e apresentação de soluções</li>
-        <li>Resiliência e pensamento crítico</li>
-      </ul>
+  <h3>Hard Skills 💻</h3>
+  <ul>
+    <li>Algoritmos e estruturas de dados</li>
+    <li>Modelagem e resolução de problemas computacionais</li>
+    <li>Programação competitiva e otimização</li>
+    <li>Conhecimentos básicos de redes e computação em nuvem/edge</li>
+  </ul>
 
-      <p>Pretende-se preparar as participantes para competições nacionais e internacionais, que exigem não apenas domínio técnico, mas também habilidades interpessoais e estratégicas. Tais competências são valiosas para toda a vida profissional e, muitas vezes, não recebem a devida ênfase durante a graduação.</p>
-    </section>
-  </main>
+  <h3>Soft Skills 🌟</h3>
+  <ul>
+    <li>Trabalho em equipe e colaboração</li>
+    <li>Trabalho sob pressão e gestão do tempo</li>
+    <li>Comunicação técnica e apresentação de soluções</li>
+    <li>Resiliência e pensamento crítico</li>
+  </ul>
+</section>
 
-  <footer>
-    Página institucional — capCode &lt;Girls/&gt; • &copy; 2025
-  </footer>
+<!-- Time Feminino -->
+<section class="card integrantes">
+  <h2>👩‍💻 Time Feminino — Integrantes</h2>
+  <div class="team-grid">
+    <div class="team-member">👩‍🎓<br>Coloque seu nome aqui! Será você a próxima?</div>
+    <div class="team-member">👩‍💻<br>A programadora misteriosa — ainda sem nome!</div>
+    <div class="team-member">🧑‍💻<br>Quem vai codar os desafios mais difíceis?</div>
+    <div class="team-member">👩‍🔧<br>A engenheira do futuro — insira seu nome!</div>
+    <div class="team-member">👩‍🚀<br>Exploradora de bugs — será você?</div>
+  </div>
+</section>
+
+<!-- Curiosidade Ada Lovelace -->
+<section class="card curiosity" style="padding: 24px; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; flex-direction: row-reverse;">
+  <img src="ada.svg" alt="Ada Lovelace" style="max-width: 200px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-shrink: 0;">
+  <div style="flex: 1; min-width: 220px;">
+    <h2>💡 Curiosidade de TI</h2>
+    <p>Você sabia que <strong>Ada Lovelace</strong> é considerada a primeira programadora da história? 👩‍💻<br>
+    Ela escreveu o primeiro algoritmo destinado a ser processado por uma máquina, no século XIX, para a Máquina Analítica de Charles Babbage. Ada é um exemplo inspirador para todas que desejam entrar no mundo da programação e da tecnologia!</p>
+  </div>
+</section>
+
+
+<!-- Recrutamento -->
+<section class="card recruit" style="padding: 24px; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+  <img src="fem.jpeg" alt="QR Code para inscrição" style="max-width: 270px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-shrink: 0;">
+  <div style="flex: 1; min-width: 220px;">
+    <h2>🚀 Recrutamento Aberto!</h2>
+    <p>💻 O <strong>capCode &lt;Girls/&gt;</strong> está procurando novas talentos para nosso time feminino de programação! Se você gosta de algoritmos, desafios de programação, TI e quer aprender em um ambiente colaborativo, essa é a sua chance! 👩‍💻</p>
+    <p>🌟 Desenvolva <strong>hard skills</strong> como lógica, estruturas de dados e modelagem de problemas, e <strong>soft skills</strong> como trabalho em equipe, comunicação e resiliência.</p>
+    <p>📅 Participe de competições nacionais e internacionais, aprenda com desafios reais e fortaleça a presença feminina na tecnologia! ⚡</p>
+    <p>👉 Inscreva-se agora enviando um e-mail para <strong><a href="mailto:capcode@ufsj.edu.br">capcode@ufsj.edu.br</a></strong> ou escaneando o QR code ao lado!</p>
+  </div>
+</section>
+
+<!-- Documentos Oficiais -->
+<section class="card docs">
+  <h2>📄 Documentos Oficiais da Equipe</h2>
+  <ol>
+    <li>Resolução — <a href="res.pdf" target="_blank">Abrir PDF</a></li>
+    <li>Ficha de Cadastro da Equipe — <a href="ficha.pdf" target="_blank">Abrir PDF</a></li>
+    <li>Estatuto da Equipe de Competição — <a href="estatuto.pdf" target="_blank">Abrir PDF</a></li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  Página institucional — capCode &lt;Girls/&gt; • &copy; 2025
+</footer>
+
 </body>
 </html>
