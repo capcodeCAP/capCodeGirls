@@ -224,16 +224,23 @@
 
 <main class="container">
 
+
 <!-- Informações da Equipe -->
-<section class="card" id="info-equipe" style="position: relative; overflow: hidden;">
-  <h2 style="color:#a31f34; text-align:center; font-size:2rem; margin-bottom:16px; text-transform:uppercase; text-shadow: 0 2px 6px rgba(0,0,0,0.2);">
-    Informações da Equipe
+<section class="card" id="info-equipe" style="position: relative; overflow: hidden; padding: 24px 20px; border-radius: 16px;
+            background: linear-gradient(135deg, #fff0f5, #ffe6eb); box-shadow: 0 8px 30px rgba(0,0,0,0.12); transition: transform 0.4s ease;">
+  
+  <h2 style="color:#a31f34; text-align:center; font-size:2rem; margin-bottom:16px; 
+             text-transform:uppercase; text-shadow: 0 3px 8px rgba(0,0,0,0.25); letter-spacing:1px;">
+    🏆 INFORMAÇÕES DA EQUIPE
   </h2>
 
-  <p><strong>Nome da Equipe:</strong> capCode &lt;Girls/&gt;</p>
+  <p><strong>Nome da Equipe:</strong> <span style="font-weight:700; background: linear-gradient(45deg,#ff3366,#ff6699); 
+      -webkit-background-clip: text; color:transparent;">capCode &lt;Girls/&gt;</span></p>
+
   <p><strong>Professor Coordenador:</strong> 
     <a href="http://lattes.cnpq.br/9608603270010718" target="_blank" style="color:#d1323e; font-weight:600; text-decoration:none;">Samuel Moreira Abreu Araújo</a>
   </p>
+
   <p><strong>Professor Orientador:</strong> Alex Vidigal Bastos</p>
   <p><strong>Capitã da Equipe:</strong> Luísa Aparecida Ferreira de Lima — Engenharia Química / DEQUI</p>
   <p><strong>Campus da UFSJ:</strong> Campus Alto Paraopeba — CAP</p>
@@ -242,7 +249,8 @@
   </p>
 
   <!-- Destaque empoderado com borda suave animada -->
-  <div style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; border-radius:16px; box-shadow: 0 0 60px rgba(255,50,100,0.15) inset; animation: pulseGlow 3s ease-in-out infinite;"></div>
+  <div style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; border-radius:16px;
+              box-shadow: 0 0 60px rgba(255,50,100,0.15) inset; animation: pulseGlow 3s ease-in-out infinite;"></div>
 
   <style>
     @keyframes pulseGlow {
@@ -250,9 +258,15 @@
       50% { box-shadow: 0 0 40px rgba(255,50,100,0.25) inset; }
       100% { box-shadow: 0 0 20px rgba(255,50,100,0.1) inset; }
     }
-  </style>
-</section>
 
+    /* Efeito sutil de hover empoderado na seção */
+    #info-equipe:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(255,50,100,0.25);
+    }
+  </style>
+
+</section>
 
 
 
