@@ -10,40 +10,87 @@
       margin: 0;
       padding: 20px;
       line-height: 1.5;
+      scroll-behavior: smooth; /* rolagem suave */
     }
 
     header {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 20px;
-      padding: 20px 10px;
-      border-radius: 0 0 20px 20px;
-      background: linear-gradient(135deg, #a31f34, #d1323e);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      padding: 30px 20px;
+      border-radius: 0 0 25px 25px;
+      background: linear-gradient(270deg, #8c1d2d, #c62839);
+      background-size: 200% 200%;
+      animation: redShift 8s ease-in-out infinite;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       color: white;
     }
 
-    header img {
-      width: 240px;
+    @keyframes redShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .header-content img {
+      width: 380px;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    header h1 {
+    .header-content h1 {
       margin: 0;
-      font-size: 2rem;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+      font-size: 2.2rem;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
 
-    header .meta {
-      font-size: 1rem;
+    .header-content .meta {
+      font-size: 1.1rem;
       margin-top: 6px;
       line-height: 1.4;
-      text-align: center;
+      font-weight: 500;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    }
+
+    /* Botões de navegação */
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, #a31f34, #d1323e);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      filter: brightness(1.1);
+    }
+
+    .btn-sobresalto:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .container {
@@ -60,59 +107,49 @@
     }
 
     /* Degradê mais suave para as caixas */
-    .card:nth-of-type(1) { background: #fff5f7; }  /* Informações */
-    .card:nth-of-type(2) { background: #ffe8ec; }  /* Descrição */
-    .card.integrantes { background: #ffd8e0; }     /* Time feminino */
-    .card.curiosity { background: #ffc8d2; }       /* Curiosidade */
-    .card.recruit { background: #ffb8c4; }         /* Recrutamento */
-    .card.docs { background: #ffa6b6; }            /* Documentos */
+    .card:nth-of-type(1) { background: #fff5f7; }
+    .card:nth-of-type(2) { background: #ffe8ec; }
+    .card.integrantes { background: #ffd8e0; }
+    .card.curiosity { background: #ffc8d2; }
+    .card.recruit { background: #ffb8c4; }
+    .card.docs { background: #ffa6b6; }
 
-    h2 {
-      color: #a31f34;
-      margin-top: 0;
-    }
+    h2 { color: #a31f34; margin-top: 0; }
+    h3 { color: #d1323e; margin-bottom: 8px; }
 
-    h3 {
-      color: #d1323e;
-      margin-bottom: 8px;
-    }
-
-    ul, ol {
-      margin: 8px 0 0 1.2rem;
-    }
-
-    footer {
-      text-align: center;
-      color: #666;
-      font-size: 0.9rem;
-      margin: 28px 0 40px 0;
-    }
-
+    ul, ol { margin: 8px 0 0 1.2rem; }
+    footer { text-align: center; color: #666; font-size: 0.9rem; margin: 28px 0 40px 0; }
     a { color: #d1323e; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     /* Time feminino */
     .team-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: space-around;
-      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      position: relative;
     }
 
     .team-member {
-      flex: 1 1 150px;
       padding: 16px;
-      border-radius: 12px;
+      border-radius: 16px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.8s ease, box-shadow 0.3s ease, background 0.8s ease;
+      position: relative;
+      color: #000;
     }
 
-    .team-member:nth-child(1) { background: #ffe8ec; }
-    .team-member:nth-child(2) { background: #ffd8e0; }
-    .team-member:nth-child(3) { background: #ffc8d2; }
-    .team-member:nth-child(4) { background: #ffb8c4; }
-    .team-member:nth-child(5) { background: #ffa6b6; }
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .team-colors { background: linear-gradient(135deg, #fff5f7, #ffe8ec); }
+    .team-colors-2 { background: linear-gradient(135deg, #ffe8ec, #ffd8e0); }
+    .team-colors-3 { background: linear-gradient(135deg, #ffd8e0, #ffc8d2); }
+    .team-colors-4 { background: linear-gradient(135deg, #ffc8d2, #ffb8c4); }
+    .team-colors-5 { background: linear-gradient(135deg, #ffb8c4, #ffa6b6); }
 
     /* Curiosidade com foto */
     .curiosity img {
@@ -124,24 +161,71 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
+    .card.curiosity:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.2); }
+    .card.curiosity img:hover { transform: scale(1.05); }
+
+    /* Recrutamento */
+    .card.recruit { cursor: pointer; }
   </style>
+
+
 </head>
 <body>
-<header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; padding: 20px 10px; border-radius: 0 0 20px 20px; background: linear-gradient(135deg, #a31f34, #d1323e); box-shadow: 0 8px 20px rgba(0,0,0,0.15); color: white;">
-    <a href="https://www.ufsj.edu.br/" target="_blank">
-        <img src="logo.jpg" alt="Logo UFSJ" style="width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-    </a>
-    <div>
-        <h1 style="margin: 0; font-size: 2rem; letter-spacing: 1px; text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">capCode &lt;Girls/&gt;</h1>
-        <div class="meta" style="font-size: 1rem; margin-top: 6px; line-height: 1.4; text-align: center;">🏆Time Feminino de Competição💪</div>
-    </div>
-</header>
 
+<header>
+    <div class="header-content">
+        <a href="https://www.ufsj.edu.br/" target="_blank">
+            <img src="https://github.com/capcodeCAP/capCodeGirls/blob/main/marca%20assinatura%20hor%20bco%20png.png?raw=true" alt="Logo capCode Girls">
+        </a>
+        <div style="display: flex; flex-direction: column; text-align: left;">
+            <h1>capCode &lt;Girls/&gt;</h1>
+            <div class="meta">🏆 Time Feminino de Competição 💪</div>
+        </div>
+    </div>
+
+<!-- Botões de navegação -->
+<div class="nav-buttons">
+    <a href="#info-equipe" class="nav-btn">Informações</a>
+    <a href="#descricao-equipe" class="nav-btn">Descrição</a>
+    <a href="#time-feminino" class="nav-btn">Time</a>
+    <a href="#curiosidade" class="nav-btn">Curiosidade</a>
+    <a href="#recrutamento" class="nav-btn">Recrutamento</a>
+    <a href="#documentos" class="nav-btn">Documentos</a>
+</div>
+
+<style>
+.nav-buttons {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+.nav-btn {
+    padding: 10px 16px;
+    border-radius: 2px;          /* quadrado levemente arredondado */
+    background: transparent;      /* fundo transparente */
+    border: 0px solid #ffffff;   /* borda branca */
+    color: #ffffff;               /* texto sempre branco */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);  /* fundo semitransparente no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+</style>
+
+</header>
 
 <main class="container">
 
 <!-- Informações da Equipe -->
-<section class="card">
+<section class="card" id="info-equipe">
   <h2>Informações da Equipe</h2>
   <p><strong>Nome da Equipe:</strong> capCode &lt;Girls/&gt;</p>
   <p><strong>Professor Coordenador:</strong> 
@@ -156,7 +240,7 @@
 </section>
 
 <!-- Descrição da Equipe -->
-<section class="card">
+<section class="card" id="descricao-equipe">
   <h2>Descrição da Equipe</h2>
   <p>O time de competição é composto exclusivamente por alunas da UFSJ, tendo como propósito estimular a participação feminina em cursos de Exatas e áreas tecnológicas. Além disso, busca desenvolver nas alunas competências essenciais para sua formação acadêmica e profissional.</p>
 
@@ -175,47 +259,90 @@
     <li>Comunicação técnica e apresentação de soluções</li>
     <li>Resiliência e pensamento crítico</li>
   </ul>
+
+  <!-- Botão interno -->
+  <div style="text-align:center; margin-top: 20px;">
+    <a href="#recrutamento" class="nav-btn btn-sobresalto">🚀 Quero me inscrever!</a>
+  </div>
 </section>
 
 <!-- Time Feminino -->
-<section class="card integrantes">
-  <h2>👩‍💻 Time Feminino — Integrantes</h2>
-  <div class="team-grid">
-    <div class="team-member">👩‍🎓<br><strong>Ana Julia Silva Santos</strong><br><em>Engenharia Mecatrônica — UFSJ/CAP</em></div>
-    <div class="team-member">👩‍💻<br><strong>Nicoly Kelly Moreira Dias</strong><br><em>Engenharia Civil — UFSJ/CAP</em></div>
-    <div class="team-member">🧑‍💻<br><strong>Eduarda Stephany Machado</strong><br><em>Engenharia de Telecomunicações — UFSJ/CAP</em></div>
-    <div class="team-member">👩‍🔧<br><strong>Laura Fabrícia de Lima Sousa</strong><br><em>Engenharia Civil — UFSJ/CAP</em></div>
-    <div class="team-member">👩‍🚀<br><strong>Maria Fernanda dos Santos Melo</strong><br><em>Engenharia Mecatrônica — UFSJ/CAP</em></div>
-    <div class="team-member">👩‍🔬<br><strong>Luisa Aparecida Ferreira de Lima</strong><br><em>Engenharia Química — UFSJ/CAP</em></div>
+<section class="card integrantes" id="time-feminino">
+  <h2 style="color: #a31f34; text-align: center; font-size: 2rem; margin-bottom: 20px;">
+    👩‍💻 Time Feminino — Integrantes
+  </h2>
+  <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
+    <div class="team-member">👩‍🎓<br><strong>Ana Julia Silva Santos</strong><br><em>Engenharia Mecatrônica</em></div>
+    <div class="team-member">👩‍💻<br><strong>Nicoly Kelly Moreira Dias</strong><br><em>Engenharia Civil</em></div>
+    <div class="team-member">🧑‍💻<br><strong>Eduarda Stephany Machado</strong><br><em>Engenharia de Telecomunicações</em></div>
+    <div class="team-member">👩‍🔧<br><strong>Laura Fabrícia de Lima Sousa</strong><br><em>Engenharia Civil</em></div>
+    <div class="team-member">👩‍🚀<br><strong>Maria Fernanda dos Santos Melo</strong><br><em>Engenharia Mecatrônica</em></div>
+    <div class="team-member">👩‍🔬<br><strong>Luisa Aparecida Ferreira de Lima</strong><br><em>Engenharia Química</em></div>
+    <div class="team-member">👩‍🔬<br><strong>Viviane Costa Santos</strong><br><em>Engenharia Mecatrônica</em></div>
+    <div class="team-member" style="background:#fff0f3;">🥳<br><strong>Falta você aqui!</strong><br><em>Venha aprender e se divertir</em></div>
   </div>
 </section>
 
+<style>
+.team-member {
+  padding: 16px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.8s ease, box-shadow 0.3s ease, background 0.8s ease;
+  background: #ffe8ec;
+}
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+</style>
 
-<!-- Curiosidade Ada Lovelace -->
-<section class="card curiosity" style="padding: 24px; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; flex-direction: row-reverse;">
-  <img src="ada.svg" alt="Ada Lovelace" style="max-width: 200px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-shrink: 0;">
+<script>
+// Rotaciona cards de posição a cada 5 segundos
+function rotateTeamCards() {
+  const grid = document.querySelector('.team-grid');
+  const cards = Array.from(grid.children);
+  if (cards.length <= 1) return;
+
+  // Remove o primeiro e coloca no final
+  const firstCard = cards.shift();
+  grid.appendChild(firstCard);
+}
+
+// Inicia a rotação a cada 5 segundos
+setInterval(rotateTeamCards, 10000);
+</script>
+
+
+
+
+
+
+<!-- Curiosidade -->
+<section class="card curiosity" id="curiosidade" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; flex-direction: row-reverse;">
+  <img src="https://raw.githubusercontent.com/capcodeCAP/capCodeGirls/b9e2c40bca79c54c4b6c6f8caac0772fb09f271e/ada.svg" alt="Ada Lovelace" style="max-width: 200px; height: auto; border-radius: 16px;">
   <div style="flex: 1; min-width: 220px;">
     <h2>💡 Curiosidade de TI</h2>
-    <p>Você sabia que <strong>Ada Lovelace</strong> é considerada a primeira programadora da história? 👩‍💻<br>
-    Ela escreveu o primeiro algoritmo destinado a ser processado por uma máquina, no século XIX, para a Máquina Analítica de Charles Babbage. Ada é um exemplo inspirador para todas que desejam entrar no mundo da programação e da tecnologia!</p>
+    <p>Você sabia que <strong>Ada Lovelace</strong> é considerada a primeira programadora da história? 👩‍💻 Ela escreveu o primeiro algoritmo destinado a ser processado por uma máquina, no século XIX, para a Máquina Analítica de Charles Babbage. Ada é um exemplo inspirador para todas que desejam entrar no mundo da programação e da tecnologia!</p>
   </div>
 </section>
 
-
 <!-- Recrutamento -->
-<section class="card recruit" style="padding: 24px; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
-  <img src="fem.jpeg" alt="QR Code para inscrição" style="max-width: 270px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-shrink: 0;">
-  <div style="flex: 1; min-width: 220px;">
+<section class="card recruit" id="recrutamento" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+  <img src="https://github.com/capcodeCAP/capCodeGirls/blob/main/fem.jpeg?raw=true" alt="QR Code para inscrição" style="max-width: 270px; border-radius: 12px;">
+  <div style="flex:1; min-width:220px;">
     <h2>🚀 Recrutamento Aberto!</h2>
     <p>💻 O <strong>capCode &lt;Girls/&gt;</strong> está procurando novas talentos para nosso time feminino de programação! Se você gosta de algoritmos, desafios de programação, TI e quer aprender em um ambiente colaborativo, essa é a sua chance! 👩‍💻</p>
     <p>🌟 Desenvolva <strong>hard skills</strong> como lógica, estruturas de dados e modelagem de problemas, e <strong>soft skills</strong> como trabalho em equipe, comunicação e resiliência.</p>
     <p>📅 Participe de competições nacionais e internacionais, aprenda com desafios reais e fortaleça a presença feminina na tecnologia! ⚡</p>
     <p>👉 Inscreva-se agora enviando um e-mail para <strong><a href="mailto:capcode@ufsj.edu.br">capcode@ufsj.edu.br</a></strong> ou escaneando o QR code ao lado!</p>
+    <p style="margin-top:12px; font-weight:bold; color:#a31f34;">🎉 Clique aqui e venha conhecer nosso grupo de WhatsApp! 📱</p>
   </div>
 </section>
 
-<!-- Documentos Oficiais -->
-<section class="card docs">
+<!-- Documentos -->
+<section class="card docs" id="documentos">
   <h2>📄 Documentos Oficiais da Equipe</h2>
   <ol>
     <li>Resolução — <a href="res.pdf" target="_blank">Abrir PDF</a></li>
