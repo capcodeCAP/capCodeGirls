@@ -225,26 +225,47 @@
 <main class="container">
 
 <!-- Informações da Equipe -->
-<section class="card" id="info-equipe">
-  <h2>Informações da Equipe</h2>
+<section class="card" id="info-equipe" style="position: relative; overflow: hidden;">
+  <h2 style="color:#a31f34; text-align:center; font-size:2rem; margin-bottom:16px; text-transform:uppercase; text-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+    Informações da Equipe
+  </h2>
+
   <p><strong>Nome da Equipe:</strong> capCode &lt;Girls/&gt;</p>
   <p><strong>Professor Coordenador:</strong> 
-    <a href="http://lattes.cnpq.br/9608603270010718" target="_blank">Samuel Moreira Abreu Araújo</a>
+    <a href="http://lattes.cnpq.br/9608603270010718" target="_blank" style="color:#d1323e; font-weight:600; text-decoration:none;">Samuel Moreira Abreu Araújo</a>
   </p>
   <p><strong>Professor Orientador:</strong> Alex Vidigal Bastos</p>
   <p><strong>Capitã da Equipe:</strong> Luísa Aparecida Ferreira de Lima — Engenharia Química / DEQUI</p>
   <p><strong>Campus da UFSJ:</strong> Campus Alto Paraopeba — CAP</p>
   <p><strong>Unidade de lotação:</strong> 
-    <a href="https://ufsj.edu.br/dtech/" target="_blank">DTECH</a>
+    <a href="https://ufsj.edu.br/dtech/" target="_blank" style="color:#d1323e; font-weight:600; text-decoration:none;">DTECH</a>
   </p>
+
+  <!-- Destaque empoderado com borda suave animada -->
+  <div style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; border-radius:16px; box-shadow: 0 0 60px rgba(255,50,100,0.15) inset; animation: pulseGlow 3s ease-in-out infinite;"></div>
+
+  <style>
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 20px rgba(255,50,100,0.1) inset; }
+      50% { box-shadow: 0 0 40px rgba(255,50,100,0.25) inset; }
+      100% { box-shadow: 0 0 20px rgba(255,50,100,0.1) inset; }
+    }
+  </style>
 </section>
+
+
+
+
+
 
 <!-- Descrição da Equipe -->
 <section class="card" id="descricao-equipe">
-  <h2>Descrição da Equipe</h2>
-  <p>O time de competição é composto exclusivamente por alunas da UFSJ, tendo como propósito estimular a participação feminina em cursos de Exatas e áreas tecnológicas. Além disso, busca desenvolver nas alunas competências essenciais para sua formação acadêmica e profissional.</p>
+  <h2 style="color:#a31f34; text-align:center; font-size:2rem; margin-bottom:16px; text-transform:uppercase;">
+    Descrição da Equipe
+  </h2>
+  <p>O time de competição é composto exclusivamente por alunas da UFSJ, com o propósito de estimular a participação feminina em cursos de Exatas e áreas tecnológicas. Além disso, desenvolve competências essenciais para a formação acadêmica e profissional.</p>
 
-  <h3>Hard Skills 💻</h3>
+  <h3 style="color:#d1323e; margin-top:20px;">Hard Skills 💻</h3>
   <ul>
     <li>Algoritmos e estruturas de dados</li>
     <li>Modelagem e resolução de problemas computacionais</li>
@@ -252,7 +273,7 @@
     <li>Conhecimentos básicos de redes e computação em nuvem/edge</li>
   </ul>
 
-  <h3>Soft Skills 🌟</h3>
+  <h3 style="color:#d1323e; margin-top:16px;">Soft Skills 🌟</h3>
   <ul>
     <li>Trabalho em equipe e colaboração</li>
     <li>Trabalho sob pressão e gestão do tempo</li>
@@ -260,18 +281,83 @@
     <li>Resiliência e pensamento crítico</li>
   </ul>
 
-  <!-- Botão interno -->
-  <div style="text-align:center; margin-top: 20px;">
-    <a href="#recrutamento" class="nav-btn btn-sobresalto">🚀 Quero me inscrever!</a>
+  <!-- Botão lúdico e empoderado -->
+  <div style="text-align:center; margin-top: 30px;">
+    <a href="#recrutamento" class="btn-empoderado">
+      🚀 Quero me inscrever!
+    </a>
   </div>
+
+  <style>
+  .btn-empoderado {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #ff3366, #ff6699, #ff99cc, #ff3366);
+    background-size: 300% 300%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+  }
+
+  .btn-empoderado::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.15);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+  }
+
+  .btn-empoderado:hover::before {
+    top: -30%;
+    left: -30%;
+  }
+
+  .btn-empoderado:hover {
+    transform: translateY(-6px) scale(1.1) rotate(-2deg);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+    background-position: 100% 0%;
+  }
+
+  /* Efeito de animação contínua no gradiente */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .btn-empoderado {
+    animation: gradientShift 5s ease infinite;
+  }
+  </style>
+
 </section>
+
+
+
+
+
+
+
+
+
 
 <!-- Time Feminino -->
 <section class="card integrantes" id="time-feminino">
-  <h2 style="color: #a31f34; text-align: center; font-size: 2rem; margin-bottom: 20px;">
+  <h2 style="color: #a31f34; text-align: center; font-size: 2.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1.2px;">
     👩‍💻 Time Feminino — Integrantes
   </h2>
-  <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
+  <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px;">
     <div class="team-member">👩‍🎓<br><strong>Ana Julia Silva Santos</strong><br><em>Engenharia Mecatrônica</em></div>
     <div class="team-member">👩‍💻<br><strong>Nicoly Kelly Moreira Dias</strong><br><em>Engenharia Civil</em></div>
     <div class="team-member">🧑‍💻<br><strong>Eduarda Stephany Machado</strong><br><em>Engenharia de Telecomunicações</em></div>
@@ -279,22 +365,42 @@
     <div class="team-member">👩‍🚀<br><strong>Maria Fernanda dos Santos Melo</strong><br><em>Engenharia Mecatrônica</em></div>
     <div class="team-member">👩‍🔬<br><strong>Luisa Aparecida Ferreira de Lima</strong><br><em>Engenharia Química</em></div>
     <div class="team-member">👩‍🔬<br><strong>Viviane Costa Santos</strong><br><em>Engenharia Mecatrônica</em></div>
-    <div class="team-member" style="background:#fff0f3;">🥳<br><strong>Falta você aqui!</strong><br><em>Venha aprender e se divertir</em></div>
+    <div class="team-member highlight">🥳<br><strong>Falta você aqui!</strong><br><em>Venha aprender e se divertir</em></div>
   </div>
 </section>
 
 <style>
 .team-member {
-  padding: 16px;
-  border-radius: 16px;
+  padding: 18px;
+  border-radius: 20px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.8s ease, box-shadow 0.3s ease, background 0.8s ease;
-  background: #ffe8ec;
+  background: linear-gradient(135deg, #ff3d6b, #ff758f);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.6s ease, box-shadow 0.3s ease, background 0.6s ease, color 0.3s ease;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
 }
+
 .team-member:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  transform: translateY(-8px) scale(1.08) rotate(-1deg);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, #ff1a4d, #ff5c7a);
+  cursor: pointer;
+}
+
+.team-member.highlight {
+  background: linear-gradient(135deg, #ffdd00, #ff9500);
+  color: #a31f34;
+  font-weight: 800;
+  text-transform: uppercase;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { transform: scale(1); box-shadow: 0 0 8px #ff9500, 0 6px 20px rgba(0,0,0,0.25); }
+  50% { transform: scale(1.1); box-shadow: 0 0 18px #ffdd00, 0 10px 28px rgba(0,0,0,0.35); }
+  100% { transform: scale(1); box-shadow: 0 0 8px #ff9500, 0 6px 20px rgba(0,0,0,0.25); }
 }
 </style>
 
@@ -305,13 +411,11 @@ function rotateTeamCards() {
   const cards = Array.from(grid.children);
   if (cards.length <= 1) return;
 
-  // Remove o primeiro e coloca no final
   const firstCard = cards.shift();
   grid.appendChild(firstCard);
 }
 
-// Inicia a rotação a cada 5 segundos
-setInterval(rotateTeamCards, 10000);
+setInterval(rotateTeamCards, 5000);
 </script>
 
 
@@ -319,43 +423,218 @@ setInterval(rotateTeamCards, 10000);
 
 
 
+
 <!-- Curiosidade -->
-<section class="card curiosity" id="curiosidade" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; flex-direction: row-reverse;">
-  <img src="https://raw.githubusercontent.com/capcodeCAP/capCodeGirls/b9e2c40bca79c54c4b6c6f8caac0772fb09f271e/ada.svg" alt="Ada Lovelace" style="max-width: 200px; height: auto; border-radius: 16px;">
+<section class="card curiosity" id="curiosidade" 
+         style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; flex-direction: row-reverse; position: relative; overflow: hidden; border-radius:16px; background: linear-gradient(135deg, #fff0f3, #ffd8e0); box-shadow: 0 6px 20px rgba(0,0,0,0.12);">
+  
+  <img src="https://raw.githubusercontent.com/capcodeCAP/capCodeGirls/b9e2c40bca79c54c4b6c6f8caac0772fb09f271e/ada.svg" 
+       alt="Ada Lovelace" 
+       style="max-width: 200px; height: auto; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.4s ease;">
+  
   <div style="flex: 1; min-width: 220px;">
-    <h2>💡 Curiosidade de TI</h2>
-    <p>Você sabia que <strong>Ada Lovelace</strong> é considerada a primeira programadora da história? 👩‍💻 Ela escreveu o primeiro algoritmo destinado a ser processado por uma máquina, no século XIX, para a Máquina Analítica de Charles Babbage. Ada é um exemplo inspirador para todas que desejam entrar no mundo da programação e da tecnologia!</p>
+    <h2 style="color:#a31f34; text-shadow:0 2px 6px rgba(0,0,0,0.2); margin-bottom:12px;">
+      💡 Curiosidade de TI
+    </h2>
+    <p style="font-weight:500; line-height:1.5;">
+      Você sabia que <strong>Ada Lovelace</strong> é considerada a primeira programadora da história? 👩‍💻
+      Ela escreveu o primeiro algoritmo destinado a ser processado por uma máquina, no século XIX, para a Máquina Analítica de Charles Babbage. 
+      Ada é um exemplo inspirador para todas que desejam entrar no mundo da programação e da tecnologia!
+    </p>
+
+    <!-- Destaque animado -->
+    <div style="position:absolute; top:-50%; left:-50%; width:200%; height:200%; background: rgba(255,50,100,0.08); transform: rotate(45deg); animation: pulseGlow 3s ease-in-out infinite;"></div>
   </div>
 </section>
+
+<style>
+/* Animação pulsante para efeito lúdico e empoderado */
+@keyframes pulseGlow {
+  0% { transform: rotate(45deg) translate(0,0); opacity: 0.4; }
+  50% { transform: rotate(45deg) translate(10px,10px); opacity: 0.6; }
+  100% { transform: rotate(45deg) translate(0,0); opacity: 0.4; }
+}
+
+/* Pequena interação na imagem */
+.card.curiosity img:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+</style>
+
+
 
 <!-- Recrutamento -->
-<section class="card recruit" id="recrutamento" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
-  <img src="https://github.com/capcodeCAP/capCodeGirls/blob/main/fem.jpeg?raw=true" alt="QR Code para inscrição" style="max-width: 270px; border-radius: 12px;">
-  <div style="flex:1; min-width:220px;">
-    <h2>🚀 Recrutamento Aberto!</h2>
-    <p>💻 O <strong>capCode &lt;Girls/&gt;</strong> está procurando novas talentos para nosso time feminino de programação! Se você gosta de algoritmos, desafios de programação, TI e quer aprender em um ambiente colaborativo, essa é a sua chance! 👩‍💻</p>
-    <p>🌟 Desenvolva <strong>hard skills</strong> como lógica, estruturas de dados e modelagem de problemas, e <strong>soft skills</strong> como trabalho em equipe, comunicação e resiliência.</p>
-    <p>📅 Participe de competições nacionais e internacionais, aprenda com desafios reais e fortaleça a presença feminina na tecnologia! ⚡</p>
-    <p>👉 Inscreva-se agora enviando um e-mail para <strong><a href="mailto:capcode@ufsj.edu.br">capcode@ufsj.edu.br</a></strong> ou escaneando o QR code ao lado!</p>
-    <p style="margin-top:12px; font-weight:bold; color:#a31f34;">🎉 Clique aqui e venha conhecer nosso grupo de WhatsApp! 📱</p>
+<section class="card recruit" id="recrutamento" 
+         style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; position: relative; border-radius:16px; background: linear-gradient(135deg, #fff0f3, #ffd8e0); box-shadow: 0 6px 20px rgba(0,0,0,0.12); overflow:hidden;">
+  
+  <img src="https://github.com/capcodeCAP/capCodeGirls/blob/main/fem.jpeg?raw=true" 
+       alt="QR Code para inscrição" 
+       style="max-width: 270px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.4s ease;">
+  
+  <div style="flex:1; min-width:220px; position: relative;">
+    <h2 style="color:#a31f34; text-shadow:0 2px 6px rgba(0,0,0,0.2); margin-bottom:12px;">
+      🚀 Recrutamento Aberto!
+    </h2>
+    <p style="font-weight:500; line-height:1.5;">
+      💻 O <strong>capCode &lt;Girls/&gt;</strong> está procurando novas talentos para nosso time feminino de programação! Se você gosta de algoritmos, desafios de programação, TI e quer aprender em um ambiente colaborativo, essa é a sua chance! 👩‍💻
+    </p>
+    <p style="font-weight:500; line-height:1.5;">
+      🌟 Desenvolva <strong>hard skills</strong> como lógica, estruturas de dados e modelagem de problemas, e <strong>soft skills</strong> como trabalho em equipe, comunicação e resiliência.
+    </p>
+    <p style="font-weight:500; line-height:1.5;">
+      📅 Participe de competições nacionais e internacionais, aprenda com desafios reais e fortaleça a presença feminina na tecnologia! ⚡
+    </p>
+    <p style="font-weight:500; line-height:1.5;">
+      👉 Inscreva-se agora enviando um e-mail para <strong><a href="mailto:capcode@ufsj.edu.br">capcode@ufsj.edu.br</a></strong> ou escaneando o QR code ao lado!
+    </p>
+
+    <!-- Link lúdico e empoderado para grupo do WhatsApp -->
+    <div style="text-align:center; margin-top: 20px;">
+      <a href="https://chat.whatsapp.com/seulink" target="_blank" class="whatsapp-empoderado">
+        🎉 Clique aqui e venha conhecer nosso grupo de Whats! 📱
+      </a>
+    </div>
+
+    <style>
+      .whatsapp-empoderado {
+        display: inline-block;
+        padding: 14px 32px;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(45deg, #ff3366, #ff6699, #ff99cc);
+        background-size: 200% 200%;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .whatsapp-empoderado::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: rgba(255,255,255,0.2);
+        transform: rotate(45deg);
+        transition: all 0.5s ease;
+      }
+
+      .whatsapp-empoderado:hover::before {
+        top: -30%;
+        left: -30%;
+      }
+
+      .whatsapp-empoderado:hover {
+        transform: translateY(-4px) scale(1.08) rotate(-1deg);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        background-position: 100% 0%;
+      }
+
+      /* Pequena animação na imagem */
+      .card.recruit img:hover {
+        transform: scale(1.05) rotate(-1deg);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+      }
+    </style>
+
   </div>
 </section>
 
+
+
+
+
+
+
+
 <!-- Documentos -->
-<section class="card docs" id="documentos">
-  <h2>📄 Documentos Oficiais da Equipe</h2>
-  <ol>
-    <li>Resolução — <a href="res.pdf" target="_blank">Abrir PDF</a></li>
-    <li>Ficha de Cadastro da Equipe — <a href="ficha.pdf" target="_blank">Abrir PDF</a></li>
-    <li>Estatuto da Equipe de Competição — <a href="estatuto.pdf" target="_blank">Abrir PDF</a></li>
+<section class="card docs" id="documentos" 
+         style="border-radius:16px; background: linear-gradient(135deg, #fff0f3, #ffd8e0); 
+                box-shadow: 0 6px 20px rgba(0,0,0,0.12); padding: 22px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+  <h2 style="color:#a31f34; text-shadow:0 2px 6px rgba(0,0,0,0.2); margin-bottom:16px;">
+    📄 Documentos Oficiais da Equipe
+  </h2>
+  <ol style="margin-left:1.2rem; font-weight:500; line-height:1.6;">
+    <li>Resolução — 
+        <a href="res.pdf" target="_blank" class="doc-link">Abrir PDF</a>
+    </li>
+    <li>Ficha de Cadastro da Equipe — 
+        <a href="ficha.pdf" target="_blank" class="doc-link">Abrir PDF</a>
+    </li>
+    <li>Estatuto da Equipe de Competição — 
+        <a href="estatuto.pdf" target="_blank" class="doc-link">Abrir PDF</a>
+    </li>
   </ol>
+
+  <style>
+    .card.docs:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    .doc-link {
+      color: #ff3366;
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .doc-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: #ff6699;
+      transition: width 0.3s ease;
+    }
+
+    .doc-link:hover {
+      color: #ff6699;
+    }
+
+    .doc-link:hover::after {
+      width: 100%;
+    }
+  </style>
 </section>
+
+
+
+
+
+
+
+
+
 
 </main>
 
-<footer>
-  Página institucional — capCode &lt;Girls/&gt; • &copy; 2025
+<footer style="text-align:center; padding:20px 0; background: linear-gradient(135deg, #ff3366, #ff6699); 
+               color:#fff; font-weight:700; font-size:1rem; border-top-left-radius:16px; border-top-right-radius:16px;
+               box-shadow:0 -4px 20px rgba(0,0,0,0.15); position:relative; overflow:hidden;">
+  <span>🌟 Página institucional — <strong>capCode &lt;Girls/&gt;</strong> • &copy; 2025 🌟</span>
+
+  <style>
+    footer span {
+      display:inline-block;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    footer span:hover {
+      transform: scale(1.05) rotate(-1deg);
+      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+  </style>
 </footer>
+
 
 </body>
 </html>
