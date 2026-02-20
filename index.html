@@ -566,21 +566,46 @@ setInterval(rotateTeamCards, 5000);
 
 </main>
 
-<footer style="text-align:center; padding:20px 0; background: linear-gradient(135deg, #ff3366, #ff6699); 
+<footer style="text-align:center; padding:24px 0; background: linear-gradient(135deg, #ff3366, #ff6699); 
                color:#fff; font-weight:700; font-size:1rem; border-top-left-radius:16px; border-top-right-radius:16px;
                box-shadow:0 -4px 20px rgba(0,0,0,0.15); position:relative; overflow:hidden;">
-  <span>🌟 Página institucional — <strong>capCode &lt;Girls/&gt;</strong> • &copy; 2025 🌟</span>
+
+  <div style="display:flex; flex-direction:column; gap:12px; align-items:center;">
+
+    <span>
+      🌟 Página institucional — <strong>capCode &lt;Girls/&gt;</strong> • &copy; 2026 🌟
+    </span>
+
+    <a href="https://www.instagram.com/capcode_girls/" 
+       target="_blank" 
+       style="text-decoration:none; color:#fff; font-weight:600; 
+              display:inline-flex; align-items:center; gap:8px;
+              padding:8px 16px; border-radius:20px;
+              background:rgba(255,255,255,0.15);
+              transition: all 0.3s ease;">
+      
+      📸 Siga no Instagram @capcode_girls
+    </a>
+
+  </div>
 
   <style>
     footer span {
-      display:inline-block;
       transition: transform 0.3s ease, text-shadow 0.3s ease;
     }
+
     footer span:hover {
-      transform: scale(1.05) rotate(-1deg);
+      transform: scale(1.05);
       text-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
+
+    footer a:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
   </style>
+
 </footer>
 
 
