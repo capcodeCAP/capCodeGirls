@@ -144,78 +144,213 @@
   <main class="container">
 
 
-    <!-- Informações da Equipe -->
-    <section class="card" id="info-equipe"
-      style="position: relative; overflow: hidden; padding: 24px 20px; border-radius: 13px;
-            background: linear-gradient(135deg, #fff0f5, #ffe6eb); box-shadow: 0 8px 30px rgba(0,0,0,0.12); transition: transform 0.4s ease;">
 
-      <h2 style="color:#a31f34; text-align:center; font-size:1.1rem; margin-bottom:16px; 
-             text-transform:uppercase; text-shadow: 0 3px 8px rgba(0,0,0,0.25); letter-spacing:1px;">
+
+
+
+
+
+
+
+
+
+    <!-- Informações da Equipe -->
+<section class="card" id="info-equipe"
+  style="
+    position: relative;
+    overflow: hidden;
+    padding: 24px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fff0f5, #ffe6eb);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  ">
+
+  <div style="
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  ">
+    <div style="flex: 1; min-width: 240px;">
+      <h2 style="
+        color:#a31f34;
+        font-size:1.1rem;
+        margin:0 0 8px 0;
+        text-transform:uppercase;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.18);
+        letter-spacing:1px;
+      ">
         🏆 INFORMAÇÕES DA EQUIPE
       </h2>
 
-      <p><strong>Nome da Equipe:</strong> <span style="font-weight:700; background: linear-gradient(45deg,#ff3366,#ff6699); 
-      -webkit-background-clip: text; color:transparent;">capCode &lt;Girls/&gt;</span></p>
+      <div style="
+        width: 70px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #ff3366, #ff6699);
+      "></div>
+    </div>
 
-      <p><strong>Professor Coordenador:</strong>
-        <a href="http://lattes.cnpq.br/9608603270010718" target="_blank"
-          style="color:#d1323e; font-weight:600; text-decoration:none;">Samuel Moreira Abreu Araújo</a>
-      </p>
+    <div style="
+      flex-shrink: 0;
+      background: rgba(255,255,255,0.55);
+      padding: 10px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      backdrop-filter: blur(4px);
+    ">
+      <img
+        src="https://raw.githubusercontent.com/capcodeCAP/capCodeGirls/main/broche.png"
+        alt="Broche capCode Girls"
+        style="
+          display: block;
+          width: 90px;
+          height: auto;
+        ">
+    </div>
+  </div>
 
-      <p><strong>Professor Orientador:</strong> Alex Vidigal Bastos</p>
-      <p><strong>Capitã da Equipe:</strong> Luísa Aparecida Ferreira de Lima — Engenharia Química</p>
-      <p><strong>Vice-Capitã da Equipe:</strong> Eduarda Stephany Machado — Engenharia de Telecomunicações</p>
-      <p><strong>Campus da UFSJ:</strong> Campus Alto Paraopeba — CAP</p>
-      <p><strong>Unidade de lotação:</strong>
-        <a href="https://ufsj.edu.br/dtech/" target="_blank"
-          style="color:#d1323e; font-weight:600; text-decoration:none;">DTECH</a>
-      </p>
+  <div style="
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 10px;
+    line-height: 1.55;
+    color: #333;
+  ">
+    <p><strong>Nome da Equipe:</strong>
+      <span style="
+        font-weight:700;
+        background: linear-gradient(45deg,#ff3366,#ff6699);
+        -webkit-background-clip: text;
+        color: transparent;
+      ">capCode &lt;Girls/&gt;</span>
+    </p>
 
-      <p style="text-align:center; margin-top:15px;">
-        <a href="https://www.instagram.com/capcode_girls/" target="_blank" rel="noopener noreferrer" style="
-       display:inline-block;
-       padding:10px 18px;
-       border-radius:12px;
-       text-decoration:none;
-       font-weight:600;
-       color:#fff;
-       background:linear-gradient(135deg,#ff3366,#ff6699);
-       box-shadow:0 6px 18px rgba(0,0,0,0.15);
-       transition:all 0.3s ease;
-     " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(0,0,0,0.25)';"
-          onmouseout="this.style.transform='none'; this.style.boxShadow='0 6px 18px rgba(0,0,0,0.15)';">
-          📸 Siga no Instagram: @capcode_girls
-        </a>
-      </p>
+    <p><strong>Professor Coordenador:</strong>
+      <a href="http://lattes.cnpq.br/9608603270010718" target="_blank"
+        style="color:#d1323e; font-weight:600; text-decoration:none;">
+        Samuel Moreira Abreu Araújo
+      </a>
+    </p>
 
-      <!-- Destaque empoderado com borda suave animada -->
-      <div style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; border-radius:16px;
-              box-shadow: 0 0 60px rgba(255,50,100,0.15) inset; animation: pulseGlow 3s ease-in-out infinite;"></div>
+    <p><strong>Professor Orientador:</strong> Alex Vidigal Bastos</p>
+    <p><strong>Capitã da Equipe:</strong> Luísa Aparecida Ferreira de Lima — Engenharia Química</p>
+    <p><strong>Vice-Capitã da Equipe:</strong> Eduarda Stephany Machado — Engenharia de Telecomunicações</p>
+    <p><strong>Campus da UFSJ:</strong> Campus Alto Paraopeba — CAP</p>
 
-      <style>
-        @keyframes pulseGlow {
-          0% {
-            box-shadow: 0 0 20px rgba(255, 50, 100, 0.1) inset;
-          }
+    <p><strong>Unidade de lotação:</strong>
+      <a href="https://ufsj.edu.br/dtech/" target="_blank"
+        style="color:#d1323e; font-weight:600; text-decoration:none;">
+        DTECH
+      </a>
+    </p>
+  </div>
 
-          50% {
-            box-shadow: 0 0 40px rgba(255, 50, 100, 0.25) inset;
-          }
+  <p style="text-align:center; margin-top:18px; position:relative; z-index:2;">
+    <a href="https://www.instagram.com/capcode_girls/" target="_blank" rel="noopener noreferrer" style="
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:600;
+      color:#fff;
+      background:linear-gradient(135deg,#ff3366,#ff6699);
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+      transition:all 0.3s ease;
+    "
+      onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(0,0,0,0.25)';"
+      onmouseout="this.style.transform='none'; this.style.boxShadow='0 6px 18px rgba(0,0,0,0.15)';">
+      📸 Siga no Instagram: @capcode_girls
+    </a>
+  </p>
 
-          100% {
-            box-shadow: 0 0 20px rgba(255, 50, 100, 0.1) inset;
-          }
-        }
+  <!-- brilho interno -->
+  <div style="
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    border-radius:16px;
+    box-shadow: 0 0 60px rgba(255,50,100,0.15) inset;
+    animation: pulseGlow 3s ease-in-out infinite;
+  "></div>
 
-        /* Efeito sutil de hover empoderado na seção */
-        #info-equipe:hover {
-          transform: translateY(-4px) scale(1.02);
-          box-shadow: 0 12px 40px rgba(255, 50, 100, 0.25);
-        }
-      </style>
+  <style>
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 20px rgba(255, 50, 100, 0.10) inset;
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(255, 50, 100, 0.22) inset;
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(255, 50, 100, 0.10) inset;
+      }
+    }
 
-    </section>
+    #info-equipe:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(255, 50, 100, 0.20);
+    }
 
+    @media (max-width: 700px) {
+      #info-equipe > div:first-child {
+        flex-direction: column;
+        align-items: center !important;
+        text-align: center;
+      }
+
+      #info-equipe > div:first-child img {
+        width: 80px !important;
+      }
+
+      #info-equipe h2 {
+        text-align: center;
+      }
+
+      #info-equipe > div:first-child div:first-child > div {
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    
 
 
 
