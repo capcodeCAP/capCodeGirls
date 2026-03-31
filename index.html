@@ -825,9 +825,13 @@ Carregando certificados...
   <script>
 
 const API_KEY = "AIzaSyBHcb9dhR3ctvWLADAJTnD3ZxW8IrZ-NXM";
+
+
+
+
 const ROOT_FOLDER = "1e8_bros5hQmz8AxI8XCpkOWdmE-Y6tlw";
 
-async function listarPasta(folderId, elemento, nivel=0){
+async function listarPasta(folderId, container){
 
 try{
 
@@ -838,22 +842,14 @@ const url =
 &key=${API_KEY}`;
 
 const resposta = await fetch(url);
-
-if(!resposta.ok){
-elemento.innerHTML="⚠️ Não foi possível carregar certificados.";
-return;
-}
-
 const dados = await resposta.json();
 
-if(!dados.files || dados.files.length===0){
-if(nivel===0)
-elemento.innerHTML="Nenhum certificado encontrado.";
+if(!dados.files){
+container.innerHTML="⚠️ Não foi possível carregar certificados.";
 return;
 }
 
 const lista=document.createElement("ul");
-lista.style.marginLeft=nivel*18+"px";
 
 for(const item of dados.files){
 
@@ -861,36 +857,60 @@ const li=document.createElement("li");
 
 if(item.mimeType==="application/vnd.google-apps.folder"){
 
-li.innerHTML="📂 <strong>"+item.name+"</strong>";
-lista.appendChild(li);
+const pasta=document.createElement("span");
+pasta.innerHTML="📂 <strong>"+item.name+"</strong>";
+pasta.style.cursor="pointer";
 
-await listarPasta(item.id, lista, nivel+1);
+const sublista=document.createElement("div");
+sublista.style.display="none";
+sublista.style.marginLeft="18px";
+
+pasta.onclick=async()=>{
+
+if(sublista.innerHTML===""){
+
+sublista.innerHTML="Carregando...";
+await listarPasta(item.id, sublista);
+
+}else{
+
+sublista.style.display =
+sublista.style.display==="none" ? "block" : "none";
+
+}
+
+};
+
+li.appendChild(pasta);
+li.appendChild(sublista);
 
 }else{
 
 li.innerHTML=
 `📄 <a href="${item.webViewLink}" target="_blank">${item.name}</a>`;
 
+}
+
 lista.appendChild(li);
 
 }
 
-}
-
-elemento.appendChild(lista);
+container.appendChild(lista);
 
 }catch(e){
 
-elemento.innerHTML="⚠️ Erro ao acessar o Google Drive.";
+container.innerHTML="⚠️ Erro ao acessar certificados.";
 
 }
 
 }
 
-listarPasta(ROOT_FOLDER, document.getElementById("drive-tree"));
+const root=document.getElementById("drive-tree");
+root.innerHTML=""; // remove "Carregando certificados..."
+
+listarPasta(ROOT_FOLDER, root);
 
 </script>
-
   
 
 
