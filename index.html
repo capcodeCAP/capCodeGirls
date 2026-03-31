@@ -759,7 +759,21 @@
 
 
 
+<section class="card certificados" id="certificados"
+style="border-radius:16px; background: linear-gradient(135deg, #fff0f3, #ffd8e0);
+box-shadow: 0 6px 20px rgba(0,0,0,0.12); padding:22px;">
 
+<h2 style="color:#a31f34; margin-bottom:14px;">
+📜 Certificados da Equipe
+</h2>
+
+<div id="drive-tree">
+Carregando certificados...
+</div>
+
+</section>
+
+    
 
 
 
@@ -806,6 +820,62 @@
   </footer>
 
 
+
+  <script>
+
+const API_KEY = "AIzaSyBHcb9dhR3ctvWLADAJTnD3ZxW8IrZ-NXM";
+const ROOT_FOLDER = "1e8_bros5hQmz8AxI8XCpkOWdmE-Y6tlw";
+
+
+async function listarPasta(folderId, elemento, nivel=0){
+
+const url =
+`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents
+&fields=files(id,name,mimeType,webViewLink)
+&key=${API_KEY}`;
+
+const resposta = await fetch(url);
+const dados = await resposta.json();
+
+if(!dados.files) return;
+
+const lista = document.createElement("ul");
+lista.style.marginLeft = nivel*18 + "px";
+
+for(const item of dados.files){
+
+const li = document.createElement("li");
+
+if(item.mimeType === "application/vnd.google-apps.folder"){
+
+li.innerHTML = "📂 <strong>"+item.name+"</strong>";
+lista.appendChild(li);
+
+await listarPasta(item.id, lista, nivel+1);
+
+}
+else{
+
+li.innerHTML =
+`📄 <a href="${item.webViewLink}" target="_blank">${item.name}</a>`;
+
+lista.appendChild(li);
+
+}
+
+}
+
+elemento.appendChild(lista);
+
+}
+
+
+listarPasta(ROOT_FOLDER, document.getElementById("drive-tree"));
+
+</script>
+
+
+  
 </body>
 
 </html>
