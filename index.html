@@ -826,9 +826,6 @@ Carregando certificados...
 
 const API_KEY = "AIzaSyBHcb9dhR3ctvWLADAJTnD3ZxW8IrZ-NXM";
 
-
-
-
 const ROOT_FOLDER = "1e8_bros5hQmz8AxI8XCpkOWdmE-Y6tlw";
 
 async function listarPasta(folderId, container){
@@ -849,6 +846,9 @@ container.innerHTML="⚠️ Não foi possível carregar certificados.";
 return;
 }
 
+// 🔧 remove "Carregando..." antes de inserir conteúdo
+container.innerHTML="";
+
 const lista=document.createElement("ul");
 
 for(const item of dados.files){
@@ -867,10 +867,14 @@ sublista.style.marginLeft="18px";
 
 pasta.onclick=async()=>{
 
-if(sublista.innerHTML===""){
+if(sublista.dataset.loaded!=="true"){
 
 sublista.innerHTML="Carregando...";
+sublista.style.display="block";
+
 await listarPasta(item.id, sublista);
+
+sublista.dataset.loaded="true";
 
 }else{
 
@@ -886,7 +890,7 @@ li.appendChild(sublista);
 
 }else{
 
-li.innerHTML=
+li.innerHTML =
 `📄 <a href="${item.webViewLink}" target="_blank">${item.name}</a>`;
 
 }
@@ -906,7 +910,9 @@ container.innerHTML="⚠️ Erro ao acessar certificados.";
 }
 
 const root=document.getElementById("drive-tree");
-root.innerHTML=""; // remove "Carregando certificados..."
+
+// remove texto inicial "Carregando certificados..."
+root.innerHTML="";
 
 listarPasta(ROOT_FOLDER, root);
 
