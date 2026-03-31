@@ -699,60 +699,54 @@
 
 
 
-    <!-- Documentos -->
-    <section class="card docs" id="documentos"
-      style="border-radius:16px; background: linear-gradient(135deg, #fff0f3, #ffd8e0); 
-                box-shadow: 0 6px 20px rgba(0,0,0,0.12); padding: 22px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-      <h2 style="color:#a31f34; text-shadow:0 2px 6px rgba(0,0,0,0.2); margin-bottom:16px;">
-        📄 Documentos Oficiais da Equipe
-      </h2>
-      <ol style="margin-left:1.2rem; font-weight:500; line-height:1.6;">
-        <li>Resolução —
-          <a href="res.pdf" target="_blank" class="doc-link">Abrir PDF</a>
-        </li>
-        <li>Ficha de Cadastro da Equipe —
-          <a href="ficha.pdf" target="_blank" class="doc-link">Abrir PDF</a>
-        </li>
-        <li>Estatuto da Equipe de Competição —
-          <a href="estatuto.pdf" target="_blank" class="doc-link">Abrir PDF</a>
-        </li>
+ <!-- Documentos -->
+<section class="card docs" id="documentos"
+  style="border-radius:16px; background: linear-gradient(135deg, #fff0f3, #ffd8e0); 
+         box-shadow: 0 6px 20px rgba(0,0,0,0.12); padding: 22px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
 
-      </ol>
+  <h2 style="color:#a31f34; text-shadow:0 2px 6px rgba(0,0,0,0.2); margin-bottom:16px;">
+    📄 Documentos Oficiais da Equipe
+  </h2>
 
-      <style>
-        .card.docs:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-        }
+  <!-- Explorador automático do Google Drive -->
+  <div id="drive-docs">
+    Carregando documentos...
+  </div>
 
-        .doc-link {
-          color: #ff3366;
-          font-weight: 600;
-          text-decoration: none;
-          position: relative;
-          transition: all 0.3s ease;
-        }
+  <style>
+    .card.docs:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
 
-        .doc-link::after {
-          content: '';
-          position: absolute;
-          width: 0%;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background: #ff6699;
-          transition: width 0.3s ease;
-        }
+    #drive-docs ul {
+      list-style: none;
+      padding-left: 8px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
 
-        .doc-link:hover {
-          color: #ff6699;
-        }
+    #drive-docs li {
+      margin: 4px 0;
+    }
 
-        .doc-link:hover::after {
-          width: 100%;
-        }
-      </style>
-    </section>
+    #drive-docs a {
+      color: #ff3366;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    #drive-docs a:hover {
+      color: #ff6699;
+    }
+  </style>
+
+</section>
+
+
+
+    
 
 
 
@@ -828,6 +822,8 @@ const API_KEY = "AIzaSyBHcb9dhR3ctvWLADAJTnD3ZxW8IrZ-NXM";
 
 const ROOT_FOLDER = "1e8_bros5hQmz8AxI8XCpkOWdmE-Y6tlw";
 
+    const DOCUMENTOS_FOLDER = "1gHD4DTf_6RwBGYMP-Q82QWgkfH0I37pn";
+
 async function listarPasta(folderId, container){
 
 try{
@@ -842,8 +838,8 @@ const resposta = await fetch(url);
 const dados = await resposta.json();
 
 if(!dados.files){
-container.innerHTML="⚠️ Não foi possível carregar certificados.";
-return;
+container.innerHTML="⚠️ Não foi possível carregar arquivos.";
+  return;
 }
 
 // 🔧 remove "Carregando..." antes de inserir conteúdo
@@ -861,6 +857,10 @@ const pasta=document.createElement("span");
 pasta.innerHTML="📂 <strong>"+item.name+"</strong>";
 pasta.style.cursor="pointer";
 
+  
+
+  
+
 const sublista=document.createElement("div");
 sublista.style.display="none";
 sublista.style.marginLeft="18px";
@@ -868,6 +868,8 @@ sublista.style.marginLeft="18px";
 pasta.onclick=async()=>{
 
 if(sublista.dataset.loaded!=="true"){
+
+pasta.innerHTML="📁 <strong>"+item.name+"</strong>";
 
 sublista.innerHTML="Carregando...";
 sublista.style.display="block";
@@ -878,12 +880,24 @@ sublista.dataset.loaded="true";
 
 }else{
 
-sublista.style.display =
-sublista.style.display==="none" ? "block" : "none";
+if(sublista.style.display==="none"){
+
+sublista.style.display="block";
+pasta.innerHTML="📁 <strong>"+item.name+"</strong>";
+
+}else{
+
+sublista.style.display="none";
+pasta.innerHTML="📂 <strong>"+item.name+"</strong>";
+
+}
 
 }
 
 };
+
+
+  
 
 li.appendChild(pasta);
 li.appendChild(sublista);
@@ -903,8 +917,7 @@ container.appendChild(lista);
 
 }catch(e){
 
-container.innerHTML="⚠️ Erro ao acessar certificados.";
-
+container.innerHTML="⚠️ Erro ao acessar arquivos.";
 }
 
 }
@@ -916,6 +929,14 @@ root.innerHTML="";
 
 listarPasta(ROOT_FOLDER, root);
 
+const docs = document.getElementById("drive-docs");
+
+if(docs){
+docs.innerHTML="";
+listarPasta(DOCUMENTOS_FOLDER, docs);
+}
+
+    
 </script>
   
 
