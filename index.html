@@ -709,9 +709,7 @@
   </h2>
 
   <!-- Explorador automático do Google Drive -->
-  <div id="drive-docs">
-    Carregando documentos...
-  </div>
+  <div id="drive-docs-root"></div>
 
   <style>
     .card.docs:hover {
@@ -929,11 +927,52 @@ root.innerHTML="";
 
 listarPasta(ROOT_FOLDER, root);
 
-const docs = document.getElementById("drive-docs");
+const docsRoot = document.getElementById("drive-docs-root");
 
-if(docs){
-docs.innerHTML="";
-listarPasta(DOCUMENTOS_FOLDER, docs);
+if(docsRoot){
+
+const pastaDocs = document.createElement("span");
+pastaDocs.innerHTML = "📂 <strong>Documentos Oficiais da Equipe</strong>";
+pastaDocs.style.cursor = "pointer";
+
+const sublistaDocs = document.createElement("div");
+sublistaDocs.style.display = "none";
+sublistaDocs.style.marginLeft = "18px";
+
+pastaDocs.onclick = async () => {
+
+if(sublistaDocs.dataset.loaded !== "true"){
+
+pastaDocs.innerHTML = "📁 <strong>Documentos Oficiais da Equipe</strong>";
+
+sublistaDocs.innerHTML = "Carregando...";
+sublistaDocs.style.display = "block";
+
+await listarPasta(DOCUMENTOS_FOLDER, sublistaDocs);
+
+sublistaDocs.dataset.loaded = "true";
+
+}else{
+
+if(sublistaDocs.style.display === "none"){
+
+sublistaDocs.style.display = "block";
+pastaDocs.innerHTML = "📁 <strong>Documentos Oficiais da Equipe</strong>";
+
+}else{
+
+sublistaDocs.style.display = "none";
+pastaDocs.innerHTML = "📂 <strong>Documentos Oficiais da Equipe</strong>";
+
+}
+
+}
+
+};
+
+docsRoot.appendChild(pastaDocs);
+docsRoot.appendChild(sublistaDocs);
+
 }
 
     
