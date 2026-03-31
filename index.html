@@ -821,42 +821,54 @@ Carregando certificados...
 
 
 
+
   <script>
 
-const API_KEY = "AIzaSyBHcb9dhR3ctvWLADAJTnD3ZxW8IrZ-NXM";
+const API_KEY = "SUA_API_KEY_AQUI";
 const ROOT_FOLDER = "1e8_bros5hQmz8AxI8XCpkOWdmE-Y6tlw";
-
 
 async function listarPasta(folderId, elemento, nivel=0){
 
+try{
+
 const url =
 `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents
+&orderBy=name
 &fields=files(id,name,mimeType,webViewLink)
 &key=${API_KEY}`;
 
 const resposta = await fetch(url);
+
+if(!resposta.ok){
+elemento.innerHTML="⚠️ Não foi possível carregar certificados.";
+return;
+}
+
 const dados = await resposta.json();
 
-if(!dados.files) return;
+if(!dados.files || dados.files.length===0){
+if(nivel===0)
+elemento.innerHTML="Nenhum certificado encontrado.";
+return;
+}
 
-const lista = document.createElement("ul");
-lista.style.marginLeft = nivel*18 + "px";
+const lista=document.createElement("ul");
+lista.style.marginLeft=nivel*18+"px";
 
 for(const item of dados.files){
 
-const li = document.createElement("li");
+const li=document.createElement("li");
 
-if(item.mimeType === "application/vnd.google-apps.folder"){
+if(item.mimeType==="application/vnd.google-apps.folder"){
 
-li.innerHTML = "📂 <strong>"+item.name+"</strong>";
+li.innerHTML="📂 <strong>"+item.name+"</strong>";
 lista.appendChild(li);
 
 await listarPasta(item.id, lista, nivel+1);
 
-}
-else{
+}else{
 
-li.innerHTML =
+li.innerHTML=
 `📄 <a href="${item.webViewLink}" target="_blank">${item.name}</a>`;
 
 lista.appendChild(li);
@@ -867,12 +879,19 @@ lista.appendChild(li);
 
 elemento.appendChild(lista);
 
+}catch(e){
+
+elemento.innerHTML="⚠️ Erro ao acessar o Google Drive.";
+
 }
 
+}
 
 listarPasta(ROOT_FOLDER, document.getElementById("drive-tree"));
 
 </script>
+
+  
 
 
   
