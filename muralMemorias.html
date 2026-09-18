@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ficha da Equipe — capCode &lt;Girls/&gt;</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #f7f9fb;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      border-radius: 0;
+      /* ALTERADO */
+      background: linear-gradient(270deg, #8c1d2d, #c62839);
+      background-size: 200% 200%;
+      animation: redShift 8s ease-in-out infinite;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      color: white;
+    }
+    
+    @keyframes redShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .header-content img {
+      width: 380px;
+      height: auto;
+      border-radius: 0;
+      box-shadow: none;
+      /* remove o “quadrado” */
+      background: transparent;
+      display: block;
+    }
+
+    .header-content h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-content .meta {
+      font-size: 1.1rem;
+      margin-top: 6px;
+      line-height: 1.4;
+      font-weight: 500;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ===== RESTANTE DO CSS PERMANECE INALTERADO ===== */
+    /* (todo o CSS abaixo é exatamente igual ao que você enviou) */
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, #a31f34, #d1323e);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      filter: brightness(1.1);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    /* … TODO O RESTO DO CSS SEGUE IGUAL … */
+  </style>
+</head>
+
+<body>
+
+
+
+<header>
+  <div class="header-content">
+    <a href="https://www.ufsj.edu.br/" target="_blank">
+      <img
+        src="https://raw.githubusercontent.com/capcodeCAP/capCodeGirls/main/logo_capcodegirls.png"
+        alt="Logo capCode Girls"
+          style="height:92px; width:auto;">
+    </a>
+
+    <div style="display:flex; flex-direction:column; text-align:left;">
+      <h1>capCode &lt;Girls/&gt;</h1>
+      <div class="meta">- Time Feminino de Competição -</div>
+    </div>
+  </div>
+</header>
+
+  
+
+  <main class="container">
+
+
+
+
+<!-- Conteiner de fotos por evento -->
+<section class="card" id="info-equipe"
+  style="
+    display: flex-box;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 24px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fff0f5, #ffe6eb);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  ">
+
+  <div style="
+    position: relative;
+    z-index: 2;
+    margin-bottom: 14px;
+  ">
+    <h2 style="
+      color: #a31f34;
+      font-size: 1.1rem;
+      margin: 0 0 8px 0;
+      text-transform: uppercase;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.18);
+      letter-spacing: 1px;
+    ">
+    Evento Conexão Meninas Digitais: Construindo Pontes nas Exatas [2026]
+    </h2>
+    <p style="margin: 4px 0;"><strong>Evento na UFSJ-CTAN, com organização de transporte saindo do CAP pelo capCode Girls.</strong></p>
+
+
+    <div style="
+      width: 70px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ff3366, #ff6699);
+    "></div>
+  </div>
+
+  <div style="
+    position: relative;
+    z-index: 2;
+    line-height: 1.35;
+    color: #333;
+    max-width: 640px;
+  ">
+
+
+<!-- Imagens para o mural -->
+    <img
+  src="imagens/fotos_mural/meninasdigitais2026_02.jpg"
+  alt="Integrantes do capCode Girls, estudantes da UFSJ juntas da professora Marina Donato e da técnica Miria no evento do Meninas Digitais."
+  style="
+    width: 100%;
+    border-radius: 15px;
+  ">
+    <p style="margin: 4px 0;">Integrantes do capCode Girls, estudantes da UFSJ juntas da professora Marina Donato e da técnica Miria no evento do Meninas Digitais.<br><br></p>
+      <img
+  src="imagens/fotos_mural/meninasdigitais2026_01.jpg"
+  alt="Quatro das participantes do evento posando para foto."
+  style="
+    width: 100%;
+    border-radius: 15px;
+  ">
+
+  </div>
+
+  <!-- brilho interno -->
+  <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 16px;
+    box-shadow: 0 0 60px rgba(255,50,100,0.15) inset;
+    animation: pulseGlow 3s ease-in-out infinite;
+  "></div>
+
+  <style>
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 20px rgba(255,50,100,0.10) inset; }
+      50% { box-shadow: 0 0 40px rgba(255,50,100,0.22) inset; }
+      100% { box-shadow: 0 0 20px rgba(255,50,100,0.10) inset; }
+    }
+
+    #info-equipe:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(255,50,100,0.20);
+    }
+
+    @media (max-width: 700px) {
+      #info-equipe img {
+        width: 160px !important;
+        top: 12px !important;
+        right: 12px !important;
+      }
+    }
+  </style>
+
+</section>
+
+<section class="card" id="info-equipe"
+  style="
+    display: flex-box;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 24px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fff0f5, #ffe6eb);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  ">
+
+  <div style="
+    position: relative;
+    z-index: 2;
+    margin-bottom: 14px;
+  ">
+    <h2 style="
+      color: #a31f34;
+      font-size: 1.1rem;
+      margin: 0 0 8px 0;
+      text-transform: uppercase;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.18);
+      letter-spacing: 1px;
+    ">
+    I Maratona de Programação Minas de Minas [2025]
+    </h2>
+    <p><strong>Primeiro evento e competição da equipe capCode Girls</strong></p>
+
+    <div style="
+      width: 70px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ff3366, #ff6699);
+    "></div>
+  </div>
+
+  <div style="
+    position: relative;
+    z-index: 2;
+    line-height: 1.35;
+    color: #333;
+    max-width: 640px;
+  ">
+
+
+<!-- Imagens para o mural -->
+    <img
+  src="imagens/fotos_mural/mmm2025_01.jpg"
+  alt="Painel I Maratona Minas de Minas"
+  style="
+    width: 100%;
+    border-radius: 15px;
+  ">
+    </p>
+    <p style="margin: 4px 0;">Painel da I Maratona de Programação Minas de Minas<br><br><br><br></p>
+      <img
+  src="imagens/fotos_mural/mmm2025_02.jpg"
+  alt="Equipes feminas da UFSJ CAP e São João Del Rei, com coach do capCode Girls: Alex"
+  style="
+    width: 100%;
+    border-radius: 15px;
+  ">
+    </p>
+    <p style="margin: 4px 0;">Equipes feminas da UFSJ CAP e São João Del Rei, com coach do capCode Girls: Alex<br><br><br><br></p>
+      <img
+  src="imagens/fotos_mural/mmm2025_03.jpg"
+  alt="Equipe Ladies of Code."
+  style="
+    width: 100%;
+    border-radius: 15px;
+  ">
+    </p>
+    <p style="margin: 4px 0;">Equipe Lad13s 0f C0d3.</p>
+
+  </div>
+
+  <!-- brilho interno -->
+  <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 16px;
+    box-shadow: 0 0 60px rgba(255,50,100,0.15) inset;
+    animation: pulseGlow 3s ease-in-out infinite;
+  "></div>
+
+  <style>
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 20px rgba(255,50,100,0.10) inset; }
+      50% { box-shadow: 0 0 40px rgba(255,50,100,0.22) inset; }
+      100% { box-shadow: 0 0 20px rgba(255,50,100,0.10) inset; }
+    }
+
+    #info-equipe:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(255,50,100,0.20);
+    }
+
+    @media (max-width: 700px) {
+      #info-equipe img {
+        width: 160px !important;
+        top: 12px !important;
+        right: 12px !important;
+      }
+    }
+  </style>
+
+</section>
+
+    <!-- Integrantes atuais da equipe -->
+   <section class="card integrantes" id="time-feminino">
+  <h2 style="color: #a31f34; text-align: center; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.2px;">
+    👩‍💻 Nomes que já fizeram/fazem parte da nossa equipe:
+  </h2>
+
+  <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px;">
+
+    <div class="team-member">
+      👩‍💻<br><strong>Jessica Beatriz S. Costa</strong><br><em>Engenharia da Computação e IA</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Viviane C. Santos</strong><br><em>Engenharia Mecatrônica</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Nicoly K. M. Dias</strong><br><em>Engenharia Civil</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Maria Marta A. Belisario</strong><br><em>Engenharia Química</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Ana Julia S. Santos</strong><br><em>Engenharia Mecatrônica</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Aline C. J. de Paula</strong><br><em>Engenharia Mecatrônica</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Ana Heloisa S. Belchior</strong><br><em>Engenharia Mecatrônica</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Caroline de O. Mesquita</strong><br><em>Engenharia Mecatrônica</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Eduarda S. Machado</strong><br><em>Engenharia de Telecomunicações</em>
+    </div>
+   <div class="team-member">
+      👩‍💻<br><strong>Luisa A. F. de Lima</strong><br><em>Engenharia de Telecomunicações</em>
+    </div> 
+    <div class="team-member">
+      👩‍💻<br><strong>Maria Fernanda S. Melo</strong><br><em>Engenharia Mecatrônica</em>
+    </div>
+    <div class="team-member">
+      👩‍💻<br><strong>Rafaela Reis</strong><br><em>Engenharia da Computação e IA</em>
+    </div>
+  </div>
+</section>
+
+    
+    <style>
+      .team-member {
+        padding: 18px;
+        border-radius: 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #ff3d6b, #ff758f);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        transition: transform 0.6s ease, box-shadow 0.3s ease, background 0.6s ease, color 0.3s ease;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .team-member:hover {
+        transform: translateY(-8px) scale(1.08) rotate(-1deg);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
+        background: linear-gradient(135deg, #ff1a4d, #ff5c7a);
+        cursor: pointer;
+      }
+
+      .team-member.highlight {
+        background: linear-gradient(135deg, #ffdd00, #ff9500);
+        color: #a31f34;
+        font-weight: 800;
+        text-transform: uppercase;
+        animation: glowPulse 2s infinite alternate;
+      }
+
+      @keyframes glowPulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 8px #ff9500, 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        50% {
+          transform: scale(1.1);
+          box-shadow: 0 0 18px #ffdd00, 0 10px 28px rgba(0, 0, 0, 0.35);
+        }
+
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 8px #ff9500, 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+      }
+    </style>
+
+    <script>
+      // Rotaciona cards de posição a cada 5 segundos
+      function rotateTeamCards() {
+        const grid = document.querySelector('.team-grid');
+        const cards = Array.from(grid.children);
+        if (cards.length <= 1) return;
+
+        const firstCard = cards.shift();
+        grid.appendChild(firstCard);
+      }
+
+      setInterval(rotateTeamCards, 5000);
+    </script>
+
+    <style>
+      /* Animação pulsante para efeito lúdico e empoderado */
+      @keyframes pulseGlow {
+        0% {
+          transform: rotate(45deg) translate(0, 0);
+          opacity: 0.4;
+        }
+
+        50% {
+          transform: rotate(45deg) translate(10px, 10px);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: rotate(45deg) translate(0, 0);
+          opacity: 0.4;
+        }
+      }
+
+      /* Pequena interação na imagem */
+      .card.curiosity img:hover {
+        transform: scale(1.08) rotate(-2deg);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+
+
+  <style>
+    .card.docs:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    #drive-docs ul {
+      list-style: none;
+      padding-left: 8px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    #drive-docs li {
+      margin: 4px 0;
+    }
+
+    #drive-docs a {
+      color: #ff3366;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    #drive-docs a:hover {
+      color: #ff6699;
+    }
+  </style>
+
+</section>
+
+  </main>
+
+  <footer style="text-align:center; padding:24px 0; background: linear-gradient(135deg, #ff3366, #ff6699); 
+               color:#fff; font-weight:700; font-size:1rem; border-top-left-radius:16px; border-top-right-radius:16px;
+               box-shadow:0 -4px 20px rgba(0,0,0,0.15); position:relative; overflow:hidden;">
+
+    <div style="display:flex; flex-direction:column; gap:12px; align-items:center;">
+
+      <span>
+        🌟 Página institucional — <strong>capCode &lt;Girls/&gt;</strong> • &copy; 2026 🌟
+      </span>
+
+      <a href="https://www.instagram.com/capcode_girls/" target="_blank" style="text-decoration:none; color:#fff; font-weight:600; 
+              display:inline-flex; align-items:center; gap:8px;
+              padding:8px 16px; border-radius:20px;
+              background:rgba(255,255,255,0.15);
+              transition: all 0.3s ease;">
+
+        📸 Siga no Instagram @capcode_girls
+      </a>
+
+    </div>
+
+    <style>
+      footer span {
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+      }
+
+      footer span:hover {
+        transform: scale(1.05);
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      footer a:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+
+  </footer>
+
+
+
+
+  <script>
+
+const API_KEY = "AIzaSyBHcb9dhR3ctvWLADAJTnD3ZxW8IrZ-NXM";
+
+const ROOT_FOLDER = "1e8_bros5hQmz8AxI8XCpkOWdmE-Y6tlw";
+
+    const DOCUMENTOS_FOLDER = "1gHD4DTf_6RwBGYMP-Q82QWgkfH0I37pn";
+
+async function listarPasta(folderId, container){
+
+try{
+
+const url =
+`https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents
+&orderBy=name
+&fields=files(id,name,mimeType,webViewLink)
+&key=${API_KEY}`;
+
+const resposta = await fetch(url);
+const dados = await resposta.json();
+
+if(!dados.files){
+container.innerHTML="⚠️ Não foi possível carregar arquivos.";
+  return;
+}
+
+// 🔧 remove "Carregando..." antes de inserir conteúdo
+container.innerHTML="";
+
+const lista=document.createElement("ul");
+
+for(const item of dados.files){
+
+const li=document.createElement("li");
+
+if(item.mimeType==="application/vnd.google-apps.folder"){
+
+const pasta=document.createElement("span");
+pasta.innerHTML="📂 <strong>"+item.name+"</strong>";
+pasta.style.cursor="pointer";
+
+  
+
+  
+
+const sublista=document.createElement("div");
+sublista.style.display="none";
+sublista.style.marginLeft="18px";
+
+pasta.onclick=async()=>{
+
+if(sublista.dataset.loaded!=="true"){
+
+pasta.innerHTML="📁 <strong>"+item.name+"</strong>";
+
+sublista.innerHTML="Carregando...";
+sublista.style.display="block";
+
+await listarPasta(item.id, sublista);
+
+sublista.dataset.loaded="true";
+
+}else{
+
+if(sublista.style.display==="none"){
+
+sublista.style.display="block";
+pasta.innerHTML="📁 <strong>"+item.name+"</strong>";
+
+}else{
+
+sublista.style.display="none";
+pasta.innerHTML="📂 <strong>"+item.name+"</strong>";
+
+}
+
+}
+
+};
+
+
+  
+
+li.appendChild(pasta);
+li.appendChild(sublista);
+
+}else{
+
+li.innerHTML =
+`📄 <a href="${item.webViewLink}" target="_blank">${item.name}</a>`;
+
+}
+
+lista.appendChild(li);
+
+}
+
+container.appendChild(lista);
+
+}catch(e){
+
+container.innerHTML="⚠️ Erro ao acessar arquivos.";
+}
+
+}
+
+const root=document.getElementById("drive-tree");
+
+// remove texto inicial "Carregando certificados..."
+root.innerHTML="";
+
+listarPasta(ROOT_FOLDER, root);
+
+const docsRoot = document.getElementById("drive-docs-root");
+
+if(docsRoot){
+
+const pastaDocs = document.createElement("span");
+pastaDocs.innerHTML = "📂 <strong>Documentos Oficiais da Equipe</strong>";
+pastaDocs.style.cursor = "pointer";
+
+const sublistaDocs = document.createElement("div");
+sublistaDocs.style.display = "none";
+sublistaDocs.style.marginLeft = "18px";
+
+pastaDocs.onclick = async () => {
+
+if(sublistaDocs.dataset.loaded !== "true"){
+
+pastaDocs.innerHTML = "📁 <strong>Documentos Oficiais da Equipe</strong>";
+
+sublistaDocs.innerHTML = "Carregando...";
+sublistaDocs.style.display = "block";
+
+await listarPasta(DOCUMENTOS_FOLDER, sublistaDocs);
+
+sublistaDocs.dataset.loaded = "true";
+
+}else{
+
+if(sublistaDocs.style.display === "none"){
+
+sublistaDocs.style.display = "block";
+pastaDocs.innerHTML = "📁 <strong>Documentos Oficiais da Equipe</strong>";
+
+}else{
+
+sublistaDocs.style.display = "none";
+pastaDocs.innerHTML = "📂 <strong>Documentos Oficiais da Equipe</strong>";
+
+}
+
+}
+
+};
+
+docsRoot.appendChild(pastaDocs);
+docsRoot.appendChild(sublistaDocs);
+
+}
+
+    
+</script>
+  
+
+
+  
+</body>
+
+</html>
